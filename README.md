@@ -67,15 +67,7 @@ DREAMNEST
 
 ---
 
-## 📸 Screenshots (Add yours here)
 
-- Home Page
-- About Page
-- Contact Page
-
-_(You can upload project screenshots in your repo and link them here.)_
-
----
 
 ## ⚡ Getting Started
 
