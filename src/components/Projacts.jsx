@@ -1,5 +1,4 @@
 import { Carousel } from "./ui/carousel";
-import { motion } from "framer-motion";
 
 export function Projacts() {
   const slideData = [
@@ -60,46 +59,19 @@ export function Projacts() {
   ];
 
   return (
-    <>
-      <motion.div
-        id="projects"
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="py-16 sm:py-20"
-      >
-        {/* Heading Section */}
-        <motion.div
-          className="text-center mb-12 px-4 sm:px-6 lg:px-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 lg:mb-8">
-            Discover Our Stunning Projects
-          </h2>
-          <motion.div
-            className="w-16 sm:w-24 md:w-32 lg:w-40 h-1 mx-auto bg-black rounded"
-            initial={{ width: 0 }}
-            whileInView={{ width: "10rem" }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          />
-        </motion.div>
+    <section id="projects" className="py-16 sm:py-20">
+      {/* Heading Section */}
+      <div className="text-center mb-12 px-4 sm:px-6 lg:px-0">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 lg:mb-8">
+          Discover Our Stunning Projects
+        </h2>
+        <div className="w-16 sm:w-24 md:w-32 lg:w-40 h-1 mx-auto bg-black rounded" />
+      </div>
 
-        {/* Carousel Section */}
-        <motion.div
-          className="relative overflow-hidden w-full h-full py-12 sm:py-16 md:py-20"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <Carousel slides={slideData} />
-        </motion.div>
-      </motion.div>
-    </>
+      {/* Carousel Section */}
+      <div className="relative overflow-hidden w-full h-full py-12 sm:py-16 md:py-20">
+        <Carousel slides={slideData} />
+      </div>
+    </section>
   );
 }

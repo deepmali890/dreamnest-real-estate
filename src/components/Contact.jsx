@@ -1,6 +1,5 @@
 import React from "react";
 import toast from "react-hot-toast";
-import { motion } from "framer-motion";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -35,12 +34,9 @@ const Contact = () => {
       className="relative bg-gradient-to-b py-20 sm:py-28 lg:py-32"
     >
       {/* Background */}
-      <motion.div
+      <div
         aria-hidden="true"
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-72"
-        initial={{ opacity: 0, y: -80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
       >
         <div
           style={{
@@ -49,49 +45,29 @@ const Contact = () => {
           }}
           className="relative left-1/2 aspect-[1155/678] w-[72rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr opacity-30 sm:w-[120rem]"
         />
-      </motion.div>
+      </div>
 
       {/* Header */}
-      <motion.div
-        className="mx-auto max-w-2xl text-center"
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
+      <div className="mx-auto max-w-2xl text-center">
         <div className="text-center mb-12 px-4 sm:px-6 lg:px-0">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 lg:mb-8">
             Contact With Us
           </h2>
-          <motion.div
-            className="w-16 sm:w-24 md:w-32 lg:w-40 h-1 mx-auto bg-black rounded"
-            initial={{ width: 0 }}
-            animate={{ width: "10rem" }}
-            transition={{ duration: 1 }}
-          />
+          <div className="w-16 sm:w-24 md:w-32 lg:w-40 h-1 mx-auto bg-black rounded" />
         </div>
         <p className="mt-4 text-lg leading-8 text-gray-600">
           Looking for your dream home or planning to sell? Share your details
           and our team will guide you every step of the way.
         </p>
-      </motion.div>
+      </div>
 
       {/* Form */}
-      <motion.form
+      <form
         onSubmit={onSubmit}
         className="mx-auto mt-12 max-w-2xl sm:mt-16 p-8 sm:p-12 bg-white/70 backdrop-blur-lg rounded-2xl shadow-lg"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
       >
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <label
               htmlFor="full-name"
               className="block text-sm font-semibold text-gray-900"
@@ -106,14 +82,9 @@ const Contact = () => {
               className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-900 shadow-sm outline-none sm:text-sm"
               required
             />
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <label
               htmlFor="email"
               className="block text-sm font-semibold text-gray-900"
@@ -128,7 +99,7 @@ const Contact = () => {
               className="mt-2 block w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-900 shadow-sm outline-none sm:text-sm"
               required
             />
-          </motion.div>
+          </div>
 
           <div className="sm:col-span-2">
             <label
@@ -185,19 +156,15 @@ const Contact = () => {
           </label>
         </div>
 
-        <motion.div
-          className="mt-8"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <div className="mt-8">
           <button
             type="submit"
             className="w-full rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-gray-800 focus:ring-2 focus:ring-black focus:ring-offset-2 transition"
           >
             Send Message
           </button>
-        </motion.div>
-      </motion.form>
+        </div>
+      </form>
     </section>
   );
 };
