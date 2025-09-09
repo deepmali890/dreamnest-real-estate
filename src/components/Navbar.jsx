@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
+import { FaRegUserCircle } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
@@ -43,14 +44,16 @@ const Navbar = () => {
 
                     {/* Logo: Center on mobile, left on desktop */}
                     <div className="flex-1 flex justify-center sm:justify-start">
-                        <div className="text-black font-bold text-xl border-2 px-3 rounded-full">
-                            DreamNest
-                        </div>
+                        <Link to="/">
+                            <div className="text-black font-bold text-xl border-2 px-3 rounded-full">
+                                DreamNest
+                            </div>
+                        </Link>
                     </div>
 
                     {/* Desktop Menu */}
                     <div className="hidden sm:flex sm:space-x-6">
-                        <Link to="/" className="px-3 py-2 rounded-md text-white font-medium bg-black">
+                        <Link to="/" className="px-3 py-2 rounded-md cursor-pointer text-white font-medium bg-black">
                             Home
                         </Link>
                         <Link to="/about" className="px-3 py-2 rounded-md text-black font-medium hover:text-gray-500">
@@ -62,7 +65,7 @@ const Navbar = () => {
                         <a href="#testimonials" className="px-3 py-2 rounded-md text-black font-medium hover:text-gray-500">
                             Testimonials
                         </a>
-                        <a onClick={() => setMobileMenuOpen(false)} href="#" className="block px-3 py-2 rounded-md text-black font-medium hover:text-gray-500">
+                        <a onClick={() => setMobileMenuOpen(false)} href="#contact" className="block px-3 py-2 rounded-md text-black font-medium hover:text-gray-500">
                             Contact
                         </a>
                     </div>
@@ -71,9 +74,9 @@ const Navbar = () => {
                     <div className="relative ml-4">
                         <button
                             onClick={() => setProfileOpen(!profileOpen)}
-                            className="flex items-center text-white bg-black px-4 py-1 font-semibold rounded-full"
+                            className="flex items-center text-white bg-black p-1 font-semibold rounded-full"
                         >
-                            Login
+                           <FaRegUserCircle />
                         </button>
                         {profileOpen && (
                             <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1">
